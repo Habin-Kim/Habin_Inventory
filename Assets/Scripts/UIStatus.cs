@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -17,5 +15,17 @@ public class UIStatus : MonoBehaviour
     private void Start()
     {
         backButton.onClick.AddListener(() => UIManager.Instance.OpenMainMenu());
+    }
+
+    /// <summary>
+    /// 캐릭터의 스테이터스를 담당
+    /// </summary>
+    /// <param name="character"></param>
+    public void SetCharacterInfo(Character character)
+    {
+        hpText.text = $"{character.HP}";
+        atkText.text = $"{character.ATK}";
+        defText.text = $"{character.DEF}";
+        criText.text = $"{character.CRI}";
     }
 }

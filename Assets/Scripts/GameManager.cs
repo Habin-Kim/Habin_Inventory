@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Character player { get; private set; }
+
     void Start()
     {
-        
+        SetData();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// 플레이어 초기 데이터 설정
+    /// </summary>
+    private void SetData()
     {
-        
+        player = new Character("Chad", 1, 35, 40, 100, 10);
+
+        UIManager.Instance.MainMenu.SetCharacterInfo(player);
+        UIManager.Instance.StatusUI.SetCharacterInfo(player);
+
+        UIManager.Instance.MainMenu.SetMainButtonsActive(true);
+
+        UIManager.Instance.StatusUI.gameObject.SetActive(false);
     }
 }
