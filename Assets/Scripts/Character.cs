@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string Name { get; private set; }
+    public int Level { get; private set; }
+    public int HP { get; private set; }
+    public int ATK { get; private set; }
+    public int DEF { get; private set; }
+    public int CRI { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public Character(string name, int level, int hp, int atk, int def, int cri)
     {
-        
+        Name = name;
+        Level = level;
+        HP = hp;
+        ATK = atk;
+        DEF = def;
+        CRI = cri;
     }
 }
