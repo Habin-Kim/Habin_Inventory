@@ -13,4 +13,9 @@ public class UIStatus : MonoBehaviour
     [SerializeField] private TextMeshProUGUI criText;
 
     [SerializeField] private Button backButton;
+
+    private void Start()
+    {
+        backButton.onClick.AddListener(() => UIManager.Instance.OpenMainMenu());
+    }
 }
