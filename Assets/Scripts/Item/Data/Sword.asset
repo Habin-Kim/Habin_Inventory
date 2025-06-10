@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60004932931ce4029bf0edab79174c16, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  itemName: "\uBCF4\uD1B5 \uAC80"
+  icon: {fileID: 21300000, guid: 424562e3881b2409eb7d583258e8a96b, type: 3}
+  description: "\uD754\uD788 \uBCFC \uC218 \uC788\uB294 \uAC80 \uC785\uB2C8\uB2E4."
+  itemAtk: 15
+  itemDef: 0
+  itemHP: 0
+  itemCri: 5

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class UIInventory : MonoBehaviour
 {
-    [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private Button backButton;
 
     [Header("슬롯 세팅")]
@@ -21,13 +20,24 @@ public class UIInventory : MonoBehaviour
         SetContentSize();
     }
 
-    private void InitInventoryUI()
+    public void InitInventoryUI()
     {
+        List<ItemData> inventory = GameManager.Instance.player.Inventory;
+
         for (int i = 0; i < maxSlotCount; i++)
         {
             GameObject slotGO = Instantiate(slotPrefab, slotParent);
             UISlot slot = slotGO.GetComponent<UISlot>();
             slots.Add(slot);
+            
+            if (i < inventory.Count)
+            {
+                slot.SetItem(inventory[i]);
+            }
+            else
+            {
+                slot.SetItem(null);
+            }
         }
     }
 
