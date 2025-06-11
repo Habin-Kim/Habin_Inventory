@@ -57,6 +57,8 @@ public class Character
             DEF += item.ItemDef;
             HP += item.ItemHP;
             CRI += item.ItemCri;
+
+            // equippedItems.Add(item);
         }
     }
 
@@ -71,6 +73,8 @@ public class Character
             DEF -= item.ItemDef;
             HP -= item.ItemHP;
             CRI -= item.ItemCri;
+
+            // equippedItems.Remove(item);
         }
     }
 }

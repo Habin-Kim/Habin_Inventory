@@ -18,7 +18,6 @@ public class UIInventory : MonoBehaviour
     private void Start()
     {
         backButton.onClick.AddListener(() => UIManager.Instance.OpenMainMenu());
-        InitInventoryUI();
         SetContentSize();
     }
 
