@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class UIInventory : MonoBehaviour
 {
     [SerializeField] private Button backButton;
+    [SerializeField] private TextMeshProUGUI itemAmountText;
 
     [Header("슬롯 세팅")]
     [SerializeField] private GameObject slotPrefab;
@@ -29,7 +31,7 @@ public class UIInventory : MonoBehaviour
             GameObject slotGO = Instantiate(slotPrefab, slotParent);
             UISlot slot = slotGO.GetComponent<UISlot>();
             slots.Add(slot);
-            
+
             if (i < inventory.Count)
             {
                 slot.SetItem(inventory[i]);
@@ -39,8 +41,13 @@ public class UIInventory : MonoBehaviour
                 slot.SetItem(null);
             }
         }
+
+        UpdateItemAmountUI();
     }
 
+    /// <summary>
+    /// 스크롤 뷰 컨텐트 Y 크기
+    /// </summary>
     private void SetContentSize()
     {
         GridLayoutGroup grid = slotParent.GetComponent<GridLayoutGroup>();
@@ -49,5 +56,14 @@ public class UIInventory : MonoBehaviour
         float contentHeight = grid.padding.top + rows * (grid.cellSize.y + grid.spacing.y);
         RectTransform rt = slotParent.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(rt.sizeDelta.x, contentHeight);
+    }
+
+    /// <summary>
+    /// 인벤토리 아이템 / 최대 텍스트
+    /// </summary>
+    private void UpdateItemAmountUI()
+    {
+        int count = GameManager.Instance.player.Inventory.Count;
+        itemAmountText.text = $"{count} / {maxSlotCount}";
     }
 }

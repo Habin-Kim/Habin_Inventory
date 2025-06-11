@@ -6,6 +6,8 @@ public class UIMainMenu : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI goldText;
+
     [SerializeField] private Button statusButton;
     [SerializeField] private Button inventoryButton;
 

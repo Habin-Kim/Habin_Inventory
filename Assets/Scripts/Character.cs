@@ -10,6 +10,7 @@ public class Character
     public int CRI { get; private set; }
 
     public List<ItemData> Inventory { get; private set; }
+    private List<ItemData> equippedItems;
 
     /// <summary>
     /// 캐릭터 정보, 인벤토리 초기화
@@ -31,6 +32,7 @@ public class Character
 
         // 인벤토리 초기화
         Inventory = new List<ItemData>();
+        equippedItems = new List<ItemData>();
     }
 
     /// <summary>
@@ -49,7 +51,7 @@ public class Character
     /// </summary>
     public void Equip(ItemData item)
     {
-        if (item != null && Inventory.Contains(item))
+        if (item != null && Inventory.Contains(item) && !equippedItems.Contains(item))
         {
             ATK += item.ItemAtk;
             DEF += item.ItemDef;
@@ -63,7 +65,7 @@ public class Character
     /// </summary>
     public void UnEquip(ItemData item)
     {
-        if (item != null && Inventory.Contains(item))
+        if (item != null && Inventory.Contains(item) && !equippedItems.Contains(item))
         {
             ATK -= item.ItemAtk;
             DEF -= item.ItemDef;

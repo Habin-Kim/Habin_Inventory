@@ -1056,6 +1056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 610597257}
   levelText: {fileID: 930874880}
+  goldText: {fileID: 0}
   statusButton: {fileID: 336795430}
   inventoryButton: {fileID: 1251607492}
 --- !u!1 &415839389
@@ -5037,8 +5038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2043abe0befc48b3b517d7011ff0503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 415839389}
   backButton: {fileID: 647144188}
+  itemAmountText: {fileID: 665937793}
   slotPrefab: {fileID: 1230114259641619800, guid: d379123016d414ca4a1889c3086e8926, type: 3}
   slotParent: {fileID: 536640744}
   maxSlotCount: 18
